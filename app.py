@@ -15,9 +15,11 @@ app.secret_key = "mentor-connect-secret-2024"
 #  DATABASE CONNECTION  ← THIS IS WHERE
 #  YOU CONNECT TO MONGODB
 # ════════════════════════════════════════
-client = MongoClient(
-    "mongodb+srv://mentoruser:YOZRJPk3S1AnnR7D@minorproject.bpyoasx.mongodb.net/?appName=Minorproject"
-)
+import os
+
+MONGO_URI = os.getenv("MONGO_URI")
+
+client = MongoClient(MONGO_URI)
 
 
 
